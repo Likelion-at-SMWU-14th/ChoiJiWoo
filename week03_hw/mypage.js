@@ -1,6 +1,7 @@
-const logoutIconBtn = document.querySelector(".btn-logout-icon");
+const logoutBtn = document.querySelector(".logout");
 
-logoutIconBtn.addEventListener("click", function () {
-    alert("로그아웃 되었습니다.");
-    window.location.href = "./login.html";
-});
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+        alert("로그아웃 되었습니다.");
+    });
+}
