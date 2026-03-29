@@ -1,0 +1,175 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+body {
+    margin: 0;
+    font-family: Pretendard, sans-serif;
+    background: linear-gradient(180deg, #362A21 0%, #0D0D0D 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.page-wrapper {
+    width: 1063px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 600px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header {
+    color: #A4A4A4;
+    text-align: right;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.header strong {
+    color: #FF9C58;
+}
+
+.mypage-box {
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(210, 210, 210, 0.12);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+
+article {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+
+.profile {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.profile img {
+    width: 187px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.profile-meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+}
+
+.meta-label { color: #FF9C58; }
+.meta-value  { color: #ffffff; font-weight: 700; }
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    margin-top: 30px;
+}
+
+.edit {
+    background: none;
+    border: none;
+    color: #A4A4A4;
+    cursor: pointer;
+    font-family: Pretendard;
+    font-size: 13px;
+}
+
+.logout {
+    color: #A4A4A4;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+.info-top {
+    display: flex;
+    gap: 20px;
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card h3 {
+    color: #FF9C58;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+.card1,
+.card2,
+.card3 {
+    width: 300px;
+    background: rgba(110, 110, 110, 0.20);
+    border-radius: 15px;
+    padding: 20px 24px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.label {
+    color: #FF9C58;
+    width: 70px;
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+.val {
+    color: white;
+    font-weight: 600;
+}
