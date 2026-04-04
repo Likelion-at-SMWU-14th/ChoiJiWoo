@@ -24,3 +24,6 @@ def login(request):
             auth_login(request, user)
             return redirect("main")
     return render(request, "login.html")
+
+def main(request):
+    return render(request, "main.html")
