@@ -16,7 +16,7 @@
                 <img class="icon" src="{% static 'images/icon.svg' %}" />
                 <h2>회원가입하기</h2>
             </div>
-            <a href="{% static 'js/signup.css' %}" class="out-btn"><img src="{% static 'images/out.svg' %}" /></a>
+            <a href="{% url 'login'%}" class="out-btn"><img src="{% static 'images/out.svg' %}" /></a>
         </header>
         <form name="signup" method="post" onsubmit="return checkPassword();">
             {% csrf_token %}
