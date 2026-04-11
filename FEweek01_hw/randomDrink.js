@@ -9,3 +9,6 @@ const drinks = [
     { name: "데미소다", price: 1300 },
     { name: "바나나우유", price: 1800 },
     { name: "레몬에이드", price: 1700 }];
+
+
+let wallet = 5000;
