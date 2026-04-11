@@ -15,7 +15,17 @@ let wallet = 5000;
 
 function buyDrink() {
     for (let i = 1; i <= 3; i++) {
-         const selectedDrink = drinks[Math.floor(Math.random() * drinks.length)];
+        const selectedDrink = drinks[Math.floor(Math.random() * drinks.length)];
+
+        if (wallet >= selectedDrink.price) {
+            wallet -= selectedDrink.price;
+            console.log(selectedDrink.name + " 음료가 나왔어요! (가격 : " + selectedDrink.price + "원)");
+            console.log("지갑에 남은 돈 : " + wallet + " 원");
+        }
+        else {
+            console.log("돈이 부족해요! 음료를 살 수 없어요!");
+        }
+
 
 
     }
