@@ -25,8 +25,8 @@ function buyDrink() {
         else {
             console.log("돈이 부족해요! 음료를 살 수 없어요!");
         }
-
-
-
+        console.log("--------------------------------");
     }
 }
+
+buyDrink();
