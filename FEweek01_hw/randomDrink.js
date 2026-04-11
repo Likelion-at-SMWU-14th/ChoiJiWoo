@@ -15,6 +15,8 @@ let wallet = 5000;
 
 function buyDrink() {
     for (let i = 1; i <= 3; i++) {
+         const selectedDrink = drinks[Math.floor(Math.random() * drinks.length)];
+
 
     }
 }
