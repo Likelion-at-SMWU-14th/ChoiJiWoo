@@ -23,7 +23,7 @@ searchBtn.addEventListener("click", () => {
                         <p>가수 : ${song.singer}</p>
                         <p>번호 : ${song.no}</p>
                         <p>브랜드 : ${song.brand}</p>
-                        <p>제목 : ${song.title}</p>
+                        <p>제목 : $ㄹ{song.title}</p>
                         <p>작곡가 : ${song.composer}</p>
                         <p>작사가 : ${song.lyricist}</p>
                         <p>노래 발매일 : ${song.release}</p>
