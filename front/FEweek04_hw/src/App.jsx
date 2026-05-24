@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import MovieCard from "./components/MovieCard";
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -13,6 +14,7 @@ function App() {
     <div>
       <AppContainer>
         <Header />
+        <MovieCard />
         <Footer />
       </AppContainer>
     </div>
