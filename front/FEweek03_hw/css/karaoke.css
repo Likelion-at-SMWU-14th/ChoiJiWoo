@@ -1,0 +1,28 @@
+body {
+    padding: 30px;
+    font-family: Pretendard;
+}
+
+.karaoke-chart-title {
+    color: orange;
+}
+
+.search-box {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 15px;
+}
+
+.song-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
