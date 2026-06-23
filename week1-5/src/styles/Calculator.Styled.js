@@ -7,7 +7,8 @@ export const Page = styled.main`
     justify-content: center;
     align-items: center;
 
-    padding: 3rem 1.5rem
+    padding: 3rem 1.5rem;
+    background-color: #7a2727;
 `;
 
 export const CalculatorPanel = styled.section`
@@ -19,7 +20,7 @@ export const CalculatorPanel = styled.section`
     gap: 0.5rem;
 
     padding: 1rem;
-    
+    background-color: #d4e158;
 `;
 
 export const Display = styled.div`
@@ -43,7 +44,7 @@ export const ButtonGrid = styled.div`
     background-color: #53e1de;
 `;
 
-export const TemporaryButton = styled.div`
+export const CalcButton = styled.div`
     min-height: 5rem;
 
     display: flex;
