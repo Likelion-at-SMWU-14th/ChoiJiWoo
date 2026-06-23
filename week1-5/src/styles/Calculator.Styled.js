@@ -53,4 +53,19 @@ export const CalcButton = styled.div`
 
     font-size: 1.5rem;
     background-color: #839de9;
+
+    grid-column: span ${({ $span }) => $span};
+
+    background-color: ${({ $variant }) => {
+        if ($variant === "operator") {
+            return "#ff9f0a"
+        }
+
+        if ($variant === "action") {
+            return "#858589"
+        }
+        return "#98989c"
+    }};
+
+    color: #ffffff;
 `;
