@@ -1,3 +1,5 @@
+import * as S from "../styles/ProductCard.Styled";
+
 function ProductCard({
   rank,
   image,
@@ -8,19 +10,19 @@ function ProductCard({
   price,
 }) {
   return (
-    <div>
+    <S.CardWrapper>
       <p> {rank} </p>
       <img src={image} alt={brand} />
       <p> {brand} </p>
       <p> {description} </p>
-      <p> {discountRate} </p>
+      <p> {discountRate}% </p>
       <p> {price} </p>
       <div>
         {tags.map((tag) => (
           <span> {tag} </span>
         ))}
       </div>
-    </div>
+    </S.CardWrapper>
   );
 }
 
