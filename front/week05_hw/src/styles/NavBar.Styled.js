@@ -53,6 +53,12 @@ export const MenuItem = styled.div`
 export const PageTitle = styled.h1`
   font-size: 50px;
   font-weight: 700;
-  padding: 24px 24px 0;
   margin: 0;
+`;
+
+export const TitleRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px 0;
 `;

@@ -13,6 +13,7 @@ import myPageIcon from "./assets/mypage.svg";
 import myLikeIcon from "./assets/mylike.svg";
 import shoppingbagIcon from "./assets/shoppingbag.svg";
 import loginIcon from "./assets/login.svg";
+import searchIcon from "./assets/search.svg";
 
 const navItems = [
   "BEST",
@@ -78,19 +79,20 @@ function App() {
           </N.MenuItem>
         </N.HeaderMenu>
       </N.Header>
-      <N.PageTitle>Special-Order Showcase PT 29Magazine</N.PageTitle>
+      <N.TitleRow>
+        <N.PageTitle>Special-Order Showcase PT 29Magazine</N.PageTitle>
+        <img src={searchIcon} alt="검색" width="40" />
+      </N.TitleRow>{" "}
       <N.Bar>
         {navItems.map((item, index) => (
           <NavBar key={item} label={item} active={index === 0} />
         ))}
       </N.Bar>
-
       <N.Bar>
         {subCategories.map((item, index) => (
           <NavBar key={item} label={item} active={index === 0} variant="sub" />
         ))}
       </N.Bar>
-
       <S.CardList>
         <ProductCard
           rank={productData[0].rank}
