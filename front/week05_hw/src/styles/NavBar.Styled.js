@@ -13,3 +13,10 @@ export const BarItem = styled.span`
   color: #000000;
   cursor: pointer;
 `;
+
+export const SubBarItem = styled.span`
+  font-size: 14px;
+  font-weight: ${(props) => (props.active ? "700" : "400")};
+  color: ${(props) => (props.active ? "#000000" : "#999999")};
+  cursor: pointer;
+`;

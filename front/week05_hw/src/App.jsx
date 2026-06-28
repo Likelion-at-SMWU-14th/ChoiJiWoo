@@ -10,7 +10,44 @@ import productImage3 from "./assets/아디다스.webp";
 import productImage4 from "./assets/락피쉬웨더웨어.webp";
 import productImage5 from "./assets/푸마.webp";
 
-const navItems = ["BEST", "WOMEN", "MEN", "INTERIOR", "KITCHEN", "ELECTRONICS"];
+const navItems = [
+  "BEST",
+  "WOMEN",
+  "MEN",
+  "INTERIOR",
+  "KITCHEN",
+  "ELECTRONICS",
+  "DIGITAL",
+  "BEAUTY",
+  "FOOD",
+  "LEISURE",
+  "KIDS",
+  "CULTURE",
+  "EARTH",
+];
+
+const subCategories = [
+  "전체",
+  "여성의류",
+  "여성가방",
+  "여성슈즈",
+  "여성액세서리",
+  "여성주얼리",
+  "가구/인테리어",
+  "주방/생활",
+  "가전",
+  "컴퓨터/디지털",
+  "뷰티",
+  "푸드",
+  "레져",
+  "컬쳐",
+  "어스",
+  "남성의류",
+  "남성가방",
+  "남성슈즈",
+  "남성액세서리",
+  "남성주얼리",
+];
 
 function App() {
   return (
@@ -18,6 +55,12 @@ function App() {
       <N.Bar>
         {navItems.map((item, index) => (
           <NavBar key={item} label={item} active={index === 0} />
+        ))}
+      </N.Bar>
+
+      <N.Bar>
+        {subCategories.map((item, index) => (
+          <NavBar key={item} label={item} active={index === 0} variant="sub" />
         ))}
       </N.Bar>
 
