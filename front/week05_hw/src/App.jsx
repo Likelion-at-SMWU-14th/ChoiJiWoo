@@ -1,4 +1,5 @@
 import "./App.css";
+import * as S from "./styles/ProductCard.Styled";
 import productData from "./data/productData";
 import ProductCard from "./components/ProductCard";
 import productImage1 from "./assets/아틀리에 나인.webp";
@@ -9,7 +10,7 @@ import productImage5 from "./assets/푸마.webp";
 
 function App() {
   return (
-    <>
+    <S.CardList>
       <ProductCard
         rank={productData[0].rank}
         brand={productData[0].brand}
@@ -55,7 +56,7 @@ function App() {
         tags={productData[4].tags}
         image={productImage5}
       />
-    </>
+    </S.CardList>
   );
 }
 
