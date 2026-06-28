@@ -20,3 +20,39 @@ export const SubBarItem = styled.span`
   color: ${(props) => (props.active ? "#000000" : "#999999")};
   cursor: pointer;
 `;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px 4px;
+`;
+
+export const Logo = styled.div`
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+`;
+
+export const HeaderMenu = styled.div`
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-size: 12px;
+  color: #696969;
+`;
+
+export const MenuItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+`;
+
+export const PageTitle = styled.h1`
+  font-size: 50px;
+  font-weight: 700;
+  padding: 24px 24px 0;
+  margin: 0;
+`;

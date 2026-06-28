@@ -9,6 +9,10 @@ import productImage2 from "./assets/파르티멘토 우먼.webp";
 import productImage3 from "./assets/아디다스.webp";
 import productImage4 from "./assets/락피쉬웨더웨어.webp";
 import productImage5 from "./assets/푸마.webp";
+import myPageIcon from "./assets/mypage.svg";
+import myLikeIcon from "./assets/mylike.svg";
+import shoppingbagIcon from "./assets/shoppingbag.svg";
+import loginIcon from "./assets/login.svg";
 
 const navItems = [
   "BEST",
@@ -52,6 +56,29 @@ const subCategories = [
 function App() {
   return (
     <>
+      <N.Header>
+        <N.Logo>29CM</N.Logo>
+
+        <N.HeaderMenu>
+          <N.MenuItem>
+            <img src={myPageIcon} alt="" width="16" />
+            <span>MY PAGE</span>
+          </N.MenuItem>
+          <N.MenuItem>
+            <img src={myLikeIcon} alt="" width="16" />
+            <span>MY LIKE</span>
+          </N.MenuItem>
+          <N.MenuItem>
+            <img src={shoppingbagIcon} alt="" width="16" />
+            <span>SHOPPING BAG</span>
+          </N.MenuItem>
+          <N.MenuItem>
+            <img src={loginIcon} alt="" width="16" />
+            <span>LOGIN</span>
+          </N.MenuItem>
+        </N.HeaderMenu>
+      </N.Header>
+      <N.PageTitle>Special-Order Showcase PT 29Magazine</N.PageTitle>
       <N.Bar>
         {navItems.map((item, index) => (
           <NavBar key={item} label={item} active={index === 0} />
