@@ -4,7 +4,7 @@ export const Bar = styled.div`
   display: flex;
   gap: 24px;
   padding: 16px 32px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #cac9c9;
 `;
 
 export const BarItem = styled.span`

@@ -7,6 +7,7 @@ export const CardList = styled.div`
   gap: 24px;
   padding: 32px;
   background-color: #ffffff;
+  width: 100%;
 `;
 
 export const CardWrapper = styled.div`
