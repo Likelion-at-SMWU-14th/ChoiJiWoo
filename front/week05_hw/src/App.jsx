@@ -62,26 +62,26 @@ function App() {
 
         <N.HeaderMenu>
           <N.MenuItem>
-            <img src={myPageIcon} alt="" width="16" />
+            <img src={myPageIcon} alt="" width="14" />
             <span>MY PAGE</span>
           </N.MenuItem>
           <N.MenuItem>
-            <img src={myLikeIcon} alt="" width="16" />
+            <img src={myLikeIcon} alt="" width="14" />
             <span>MY LIKE</span>
           </N.MenuItem>
           <N.MenuItem>
-            <img src={shoppingbagIcon} alt="" width="16" />
+            <img src={shoppingbagIcon} alt="" width="14" />
             <span>SHOPPING BAG</span>
           </N.MenuItem>
           <N.MenuItem>
-            <img src={loginIcon} alt="" width="16" />
+            <img src={loginIcon} alt="" width="14" />
             <span>LOGIN</span>
           </N.MenuItem>
         </N.HeaderMenu>
       </N.Header>
       <N.TitleRow>
         <N.PageTitle>Special-Order Showcase PT 29Magazine</N.PageTitle>
-        <img src={searchIcon} alt="검색" width="40" />
+        <img src={searchIcon} alt="검색" width="30" />
       </N.TitleRow>{" "}
       <N.Bar>
         {navItems.map((item, index) => (

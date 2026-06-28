@@ -8,14 +8,14 @@ export const Bar = styled.div`
 `;
 
 export const BarItem = styled.span`
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #000000;
   cursor: pointer;
 `;
 
 export const SubBarItem = styled.span`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: ${(props) => (props.active ? "700" : "400")};
   color: ${(props) => (props.active ? "#000000" : "#999999")};
   cursor: pointer;
@@ -29,7 +29,7 @@ export const Header = styled.div`
 `;
 
 export const Logo = styled.div`
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
@@ -39,7 +39,7 @@ export const HeaderMenu = styled.div`
   display: flex;
   gap: 24px;
   align-items: center;
-  font-size: 12px;
+  font-size: 9px;
   color: #696969;
 `;
 
@@ -51,9 +51,10 @@ export const MenuItem = styled.div`
 `;
 
 export const PageTitle = styled.h1`
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 700;
   margin: 0;
+  word-spacing: 12px;
 `;
 
 export const TitleRow = styled.div`
