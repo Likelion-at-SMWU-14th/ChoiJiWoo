@@ -23,6 +23,7 @@ export const ImageBox = styled.div`
   overflow: hidden;
   border-radius: 4px;
   background-color: #f5f5f5;
+  cursor: pointer;
 `;
 
 export const ProductImage = styled.img`
