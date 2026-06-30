@@ -21,6 +21,13 @@ export const SubBarItem = styled.span`
   cursor: pointer;
 `;
 
+export const SubBar = styled.div`
+  display: flex;
+  gap: 16px;
+  padding: 12px 32px;
+  border-bottom: 1px solid #e5e5e5;
+`;
+
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
