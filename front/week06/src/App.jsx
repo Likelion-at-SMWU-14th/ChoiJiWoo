@@ -1,7 +1,11 @@
 import "./App.css";
-
+import UserInfo from "./components/Info";
 function App() {
-  return <></>;
+  return (
+    <div>
+      <UserInfo />
+    </div>
+  );
 }
 
 export default App;
