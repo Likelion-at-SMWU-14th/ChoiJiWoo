@@ -18,6 +18,10 @@ const Movie = () => {
         console.error("에러 발생", err);
       });
   }, []);
+  const filteredMovies =
+    selectedGenre === "전체"
+      ? movies
+      : movies.filter((movie) => movie.genre === selectedGenre);
 
   return (
     <Container>
@@ -30,7 +34,7 @@ const Movie = () => {
         ))}
       </div>
       <MovieGrid>
-        {movies.map((movie) => (
+        {filteredMovies.map((movie) => (
           <MovieCard key={movie.id}>
             <Poster src={movie.poster} alt={movie.title} />
 
