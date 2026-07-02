@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
+
 const Movie = () => {
   const [movies, setMovies] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState("전체");
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/movies")
@@ -18,6 +22,13 @@ const Movie = () => {
   return (
     <Container>
       <Title> 무비차트 </Title>
+      <div>
+        {GENRES.map((genre) => (
+          <button key={genre} onClick={() => setSelectedGenre(genre)}>
+            {genre}
+          </button>
+        ))}
+      </div>
       <MovieGrid>
         {movies.map((movie) => (
           <MovieCard key={movie.id}>
