@@ -63,6 +63,54 @@
             "rating": 8.35,
             "genre": "공포",
             "description": "기이한 소문이 끊이지 않는 저수지 살목지의 로드뷰 화면에 촬영한 적 없는 정체불명의 형체가 포착된다."
+        },
+        {
+            "id": 9,
+            "title": "어바웃 타임",
+            "poster": "/images/어바웃타임.jpeg",
+            "rating": 9.25,
+            "genre": "로맨스",
+            "description": "시간을 되돌릴 수 있는 능력을 가진 남자가 사랑과 가족의 소중함을 깨닫는 이야기."
+        },
+        {
+            "id": 10,
+            "title": "쇼생크 탈출",
+            "poster": "/images/쇼생크탈출.jpeg",
+            "rating": 9.50,
+            "genre": "드라마",
+            "description": "미국의 쇼생크 교도소에 갇힌 주인공 앤디 듀프레인에게 벌어지는 일들을 그의 감방 동기인 레드의 시점에서 담은 영화"
+        },
+        {
+            "id": 11,
+            "title": "범죄도시",
+            "poster": "/images/범죄도시.jpeg",
+            "rating": 9.28,
+            "genre": "범죄",
+            "description": " 나쁜 놈들 때려잡는 강력반 형사들의 ‘조폭소탕작전’이 시작된다!"
+        },
+        {
+            "id": 12,
+            "title": "군체",
+            "poster": "/images/군체.jpeg",
+            "rating": 7.89,
+            "genre": "스릴러",
+            "description": "서울 도심의 초고층 빌딩에서 정체불명의 집단 감염사태가 발생한다.."
+        },
+        {
+            "id": 13,
+            "title": "인터스텔라",
+            "poster": "/images/인터스텔라.jpeg",
+            "rating": 9.13,
+            "genre": "SF",
+            "description": "세계 각국의 정부와 경제가 완전히 붕괴된 미래가 다가온다."
+        },
+        {
+            "id": 14,
+            "title": "컨저링",
+            "poster": "/images/컨저링.jpeg",
+            "rating": 7.86,
+            "genre": "공포",
+            "description": "등골이 서늘해지는 실화. 뉴잉글랜드의 한 가족이 집에 머무는 영혼들을 마주하게 되는데..."
         }
     ]
 }
