@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin: 0;
+  margin-bottom: 32px;
   font-size: 60px;
   font-weight: 700;
   font-family: "Archivo Black", sans-serif;
@@ -81,4 +81,11 @@ export const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 32px;
+`;
+
+export const EmptyMessage = styled.p`
+  color: #888;
+  font-size: 18px;
+  text-align: center;
+  padding: 80px 0;
 `;

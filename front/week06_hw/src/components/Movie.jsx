@@ -14,6 +14,7 @@ import {
   Genre,
   Description,
   Header,
+  EmptyMessage,
 } from "../styles/Movie.styled";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
@@ -62,19 +63,24 @@ const Movie = () => {
           </GenreButton>
         ))}
       </GenreButtonWrapper>
-      <MovieGrid>
-        {searchedMovies.map((movie) => (
-          <MovieCard key={movie.id}>
-            <Poster src={movie.poster} alt={movie.title} />
-            <MovieInfo>
-              <MovieTitle>{movie.title}</MovieTitle>
-              <Rating> ⭐ {movie.rating}</Rating>
-              <Genre> {movie.genre}</Genre>
-              <Description> {movie.description}</Description>
-            </MovieInfo>
-          </MovieCard>
-        ))}
-      </MovieGrid>
+
+      {searchedMovies.length === 0 ? (
+        <EmptyMessage>검색 결과가 없습니다.</EmptyMessage>
+      ) : (
+        <MovieGrid>
+          {searchedMovies.map((movie) => (
+            <MovieCard key={movie.id}>
+              <Poster src={movie.poster} alt={movie.title} />
+              <MovieInfo>
+                <MovieTitle>{movie.title}</MovieTitle>
+                <Rating> ⭐ {movie.rating}</Rating>
+                <Genre> {movie.genre}</Genre>
+                <Description> {movie.description}</Description>
+              </MovieInfo>
+            </MovieCard>
+          ))}
+        </MovieGrid>
+      )}
     </Container>
   );
 };
