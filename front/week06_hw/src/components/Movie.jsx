@@ -35,7 +35,9 @@ const Movie = () => {
     selectedGenre === "전체"
       ? movies
       : movies.filter((movie) => movie.genre === selectedGenre);
-
+  const searchedMovies = filteredMovies.filter((movie) =>
+    movie.title.includes(keyword),
+  );
   return (
     <Container>
       <Title> MOVIE CHART </Title>
@@ -57,10 +59,9 @@ const Movie = () => {
         ))}
       </GenreButtonWrapper>
       <MovieGrid>
-        {filteredMovies.map((movie) => (
+        {searchedMovies.map((movie) => (
           <MovieCard key={movie.id}>
             <Poster src={movie.poster} alt={movie.title} />
-
             <MovieInfo>
               <MovieTitle>{movie.title}</MovieTitle>
               <Rating> ⭐ {movie.rating}</Rating>
