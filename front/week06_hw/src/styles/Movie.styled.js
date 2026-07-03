@@ -89,3 +89,20 @@ export const EmptyMessage = styled.p`
   text-align: center;
   padding: 80px 0;
 `;
+
+const S = {
+    Container,
+    Title,
+    MovieGrid,
+    MovieCard,
+    Poster,
+    MovieInfo,
+    MovieTitle,
+    Rating,
+    Genre,
+    Description,
+    Header,
+    EmptyMessage,
+};
+
+export default S;

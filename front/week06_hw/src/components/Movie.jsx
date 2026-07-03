@@ -2,20 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
 import { SearchInput } from "../styles/SearchBar.styled";
-import {
-  Container,
-  Title,
-  MovieGrid,
-  MovieCard,
-  Poster,
-  MovieInfo,
-  MovieTitle,
-  Rating,
-  Genre,
-  Description,
-  Header,
-  EmptyMessage,
-} from "../styles/Movie.styled";
+import S from "../styles/Movie.styled";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
 
@@ -42,16 +29,16 @@ const Movie = () => {
     movie.title.includes(keyword),
   );
   return (
-    <Container>
-      <Header>
-        <Title> MOVIE CHART </Title>
+    <S.Container>
+      <S.Header>
+        <S.Title> MOVIE CHART </S.Title>
         <SearchInput
           type="text"
           placeholder="영화 제목 검색"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-      </Header>
+      </S.Header>
       <GenreButtonWrapper>
         {GENRES.map((genre) => (
           <GenreButton
@@ -65,23 +52,23 @@ const Movie = () => {
       </GenreButtonWrapper>
 
       {searchedMovies.length === 0 ? (
-        <EmptyMessage>검색 결과가 없습니다.</EmptyMessage>
+        <S.EmptyMessage>검색 결과가 없습니다.</S.EmptyMessage>
       ) : (
-        <MovieGrid>
+        <S.MovieGrid>
           {searchedMovies.map((movie) => (
-            <MovieCard key={movie.id}>
-              <Poster src={movie.poster} alt={movie.title} />
-              <MovieInfo>
-                <MovieTitle>{movie.title}</MovieTitle>
-                <Rating> ⭐ {movie.rating}</Rating>
-                <Genre> {movie.genre}</Genre>
-                <Description> {movie.description}</Description>
-              </MovieInfo>
-            </MovieCard>
+            <S.MovieCard key={movie.id}>
+              <S.Poster src={movie.poster} alt={movie.title} />
+              <S.MovieInfo>
+                <S.MovieTitle>{movie.title}</S.MovieTitle>
+                <S.Rating> ⭐ {movie.rating}</S.Rating>
+                <S.Genre> {movie.genre}</S.Genre>
+                <S.Description> {movie.description}</S.Description>
+              </S.MovieInfo>
+            </S.MovieCard>
           ))}
-        </MovieGrid>
+        </S.MovieGrid>
       )}
-    </Container>
+    </S.Container>
   );
 };
 
