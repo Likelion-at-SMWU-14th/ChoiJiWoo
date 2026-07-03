@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 32px;
+  margin: 0;
   font-size: 60px;
   font-weight: 700;
   font-family: "Archivo Black", sans-serif;
@@ -76,3 +76,9 @@ export const Description = styled.p`
   line-height: 1.5;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+`;

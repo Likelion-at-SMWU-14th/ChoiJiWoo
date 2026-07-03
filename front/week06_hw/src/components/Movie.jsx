@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
+import { SearchInput } from "../styles/SearchBar.styled";
 import {
   Container,
   Title,
@@ -12,6 +13,7 @@ import {
   Rating,
   Genre,
   Description,
+  Header,
 } from "../styles/Movie.styled";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
@@ -40,13 +42,15 @@ const Movie = () => {
   );
   return (
     <Container>
-      <Title> MOVIE CHART </Title>
-      <input
-        type="text"
-        placeholder="영화 제목 검색"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-      />
+      <Header>
+        <Title> MOVIE CHART </Title>
+        <SearchInput
+          type="text"
+          placeholder="영화 제목 검색"
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+      </Header>
       <GenreButtonWrapper>
         {GENRES.map((genre) => (
           <GenreButton
