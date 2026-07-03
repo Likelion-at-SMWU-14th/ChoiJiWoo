@@ -38,6 +38,7 @@ const Movie = () => {
   return (
     <Container>
       <Title> MOVIE CHART </Title>
+      <input type="text" placeholder="영화 제목 검색" />
       <GenreButtonWrapper>
         {GENRES.map((genre) => (
           <GenreButton
