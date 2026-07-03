@@ -19,6 +19,7 @@ const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF",
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("전체");
+  const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
     axios
@@ -38,7 +39,12 @@ const Movie = () => {
   return (
     <Container>
       <Title> MOVIE CHART </Title>
-      <input type="text" placeholder="영화 제목 검색" />
+      <input
+        type="text"
+        placeholder="영화 제목 검색"
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
       <GenreButtonWrapper>
         {GENRES.map((genre) => (
           <GenreButton
