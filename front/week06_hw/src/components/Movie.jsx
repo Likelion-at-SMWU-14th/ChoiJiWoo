@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
 
@@ -26,13 +27,17 @@ const Movie = () => {
   return (
     <Container>
       <Title> 무비차트 </Title>
-      <div>
+      <GenreButtonWrapper>
         {GENRES.map((genre) => (
-          <button key={genre} onClick={() => setSelectedGenre(genre)}>
+          <GenreButton
+            key={genre}
+            $active={selectedGenre === genre}
+            onClick={() => setSelectedGenre(genre)}
+          >
             {genre}
-          </button>
+          </GenreButton>
         ))}
-      </div>
+      </GenreButtonWrapper>
       <MovieGrid>
         {filteredMovies.map((movie) => (
           <MovieCard key={movie.id}>
