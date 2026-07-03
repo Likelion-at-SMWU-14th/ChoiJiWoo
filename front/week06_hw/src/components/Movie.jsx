@@ -25,8 +25,9 @@ const Movie = () => {
     selectedGenre === "전체"
       ? movies
       : movies.filter((movie) => movie.genre === selectedGenre);
-  const searchedMovies = filteredMovies.filter((movie) =>
-    movie.title.includes(keyword),
+  const searchedMovies = filteredMovies.filter(
+    (movie) =>
+      movie.title.includes(keyword) || movie.description.includes(keyword),
   );
   return (
     <S.Container>
