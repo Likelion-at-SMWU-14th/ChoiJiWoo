@@ -1,4 +1,4 @@
-import { useQuiz } from "react";
+import { useQuiz } from "../hooks/useQuiz";
 const QuizPage = () => {
   const questions = [
     { question: "React에서 상태를 관리하는 Hook은?", answer: "useState" },
