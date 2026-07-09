@@ -57,15 +57,17 @@ const Movie = () => {
       ) : (
         <S.MovieGrid>
           {searchedMovies.map((movie) => (
-            <S.MovieCard key={movie.id}>
-              <S.Poster src={movie.poster} alt={movie.title} />
-              <S.MovieInfo>
-                <S.MovieTitle>{movie.title}</S.MovieTitle>
-                <S.Rating> ⭐ {movie.rating}</S.Rating>
-                <S.Genre> {movie.genre}</S.Genre>
-                <S.Description> {movie.description}</S.Description>
-              </S.MovieInfo>
-            </S.MovieCard>
+            <S.StyledLink key={movie.id} to={`/movie/${movie.id}`}>
+              <S.MovieCard key={movie.id}>
+                <S.Poster src={movie.poster} alt={movie.title} />
+                <S.MovieInfo>
+                  <S.MovieTitle>{movie.title}</S.MovieTitle>
+                  <S.Rating> ⭐ {movie.rating}</S.Rating>
+                  <S.Genre> {movie.genre}</S.Genre>
+                  <S.Description> {movie.description}</S.Description>
+                </S.MovieInfo>
+              </S.MovieCard>
+            </S.StyledLink>
           ))}
         </S.MovieGrid>
       )}

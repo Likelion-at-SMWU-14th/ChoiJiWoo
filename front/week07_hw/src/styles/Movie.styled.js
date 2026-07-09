@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -90,19 +91,25 @@ export const EmptyMessage = styled.p`
   padding: 80px 0;
 `;
 
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 const S = {
-    Container,
-    Title,
-    MovieGrid,
-    MovieCard,
-    Poster,
-    MovieInfo,
-    MovieTitle,
-    Rating,
-    Genre,
-    Description,
-    Header,
-    EmptyMessage,
+  Container,
+  Title,
+  MovieGrid,
+  MovieCard,
+  Poster,
+  MovieInfo,
+  MovieTitle,
+  Rating,
+  Genre,
+  Description,
+  Header,
+  EmptyMessage,
+  StyledLink,
 };
 
 export default S;
