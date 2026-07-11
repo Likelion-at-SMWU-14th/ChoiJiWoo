@@ -17,10 +17,19 @@ const Movie = () => {
       ? movies
       : movies.filter((movie) => movie.genre === selectedGenre);
 
-  const searchedMovies = filteredMovies.filter(
-    (movie) =>
-      movie.title.includes(keyword) || movie.description.includes(keyword),
-  );
+  const normalize = (str) => str.toLowerCase().replace(/\s/g, "");
+
+  const searchedMovies = filteredMovies.filter((movie) => {
+    const normalizedTitle = normalize(movie.title);
+    const normalizedDescription = normalize(movie.description);
+    const normalizedKeyword = normalize(keyword);
+
+    return (
+      normalizedTitle.includes(normalizedKeyword) ||
+      normalizedDescription.includes(normalizedKeyword) ||
+      normalize(movie.genre).includes(normalizedKeyword)
+    );
+  });
 
   return (
     <>
