@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import axios from "axios";
 import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
-import { SearchInput } from "../styles/SearchBar.styled";
 import S from "../styles/Movie.styled";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
 
 const Movie = () => {
+  const { keyword } = useOutletContext();
   const [movies, setMovies] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("전체");
-  const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
     axios
@@ -21,25 +21,19 @@ const Movie = () => {
         console.error("에러 발생", err);
       });
   }, []);
+
   const filteredMovies =
     selectedGenre === "전체"
       ? movies
       : movies.filter((movie) => movie.genre === selectedGenre);
+
   const searchedMovies = filteredMovies.filter(
     (movie) =>
       movie.title.includes(keyword) || movie.description.includes(keyword),
   );
+
   return (
-    <S.Container>
-      <S.Header>
-        <S.Title> MOVIE CHART </S.Title>
-        <SearchInput
-          type="text"
-          placeholder="영화 제목 검색"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-        />
-      </S.Header>
+    <>
       <GenreButtonWrapper>
         {GENRES.map((genre) => (
           <GenreButton
@@ -58,7 +52,7 @@ const Movie = () => {
         <S.MovieGrid>
           {searchedMovies.map((movie) => (
             <S.StyledLink key={movie.id} to={`/movie/${movie.id}`}>
-              <S.MovieCard key={movie.id}>
+              <S.MovieCard>
                 <S.Poster src={movie.poster} alt={movie.title} />
                 <S.MovieInfo>
                   <S.MovieTitle>{movie.title}</S.MovieTitle>
@@ -71,7 +65,7 @@ const Movie = () => {
           ))}
         </S.MovieGrid>
       )}
-    </S.Container>
+    </>
   );
 };
 
