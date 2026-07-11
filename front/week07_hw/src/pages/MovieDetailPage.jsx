@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import {
   DetailWrapper,
   BackLink,
@@ -12,21 +10,11 @@ import {
   DetailDescription,
   LoadingText,
 } from "../styles/MovieDetail.styled";
+import { useMovies } from "../hooks/useMovies";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/movies")
-      .then((res) => {
-        setMovies(res.data);
-      })
-      .catch((err) => {
-        console.error("에러 발생", err);
-      });
-  }, []);
+  const movies = useMovies();
 
   const movie = movies.find((m) => m.id === id);
   if (!movie) return <LoadingText>로딩중</LoadingText>;

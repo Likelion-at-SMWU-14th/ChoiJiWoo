@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import axios from "axios";
 import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
 import S from "../styles/Movie.styled";
+import { useMovies } from "../hooks/useMovies";
 
 const GENRES = ["전체", "로맨스", "드라마", "범죄", "스릴러", "SF", "공포"];
 
 const Movie = () => {
   const { keyword } = useOutletContext();
-  const [movies, setMovies] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("전체");
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/movies")
-      .then((res) => {
-        setMovies(res.data);
-      })
-      .catch((err) => {
-        console.error("에러 발생", err);
-      });
-  }, []);
+  const movies = useMovies();
 
   const filteredMovies =
     selectedGenre === "전체"
