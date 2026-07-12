@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useOutletContext } from "react-router-dom";
 import { GenreButton, GenreButtonWrapper } from "../styles/GenreButton.styled";
 import S from "../styles/Movie.styled";
@@ -12,24 +12,26 @@ const Movie = () => {
 
   const movies = useMovies();
 
-  const filteredMovies =
-    selectedGenre === "전체"
-      ? movies
-      : movies.filter((movie) => movie.genre === selectedGenre);
-
   const normalize = (str) => str.toLowerCase().replace(/\s/g, "");
 
-  const searchedMovies = filteredMovies.filter((movie) => {
-    const normalizedTitle = normalize(movie.title);
-    const normalizedDescription = normalize(movie.description);
-    const normalizedKeyword = normalize(keyword);
+  const searchedMovies = useMemo(() => {
+    const filteredMovies =
+      selectedGenre === "전체"
+        ? movies
+        : movies.filter((movie) => movie.genre === selectedGenre);
 
-    return (
-      normalizedTitle.includes(normalizedKeyword) ||
-      normalizedDescription.includes(normalizedKeyword) ||
-      normalize(movie.genre).includes(normalizedKeyword)
-    );
-  });
+    return filteredMovies.filter((movie) => {
+      const normalizedTitle = normalize(movie.title);
+      const normalizedDescription = normalize(movie.description);
+      const normalizedKeyword = normalize(keyword);
+
+      return (
+        normalizedTitle.includes(normalizedKeyword) ||
+        normalizedDescription.includes(normalizedKeyword) ||
+        normalize(movie.genre).includes(normalizedKeyword)
+      );
+    });
+  }, [movies, selectedGenre, keyword]);
 
   return (
     <>
