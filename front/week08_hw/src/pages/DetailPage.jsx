@@ -9,8 +9,9 @@ import axios from "axios";
 
 const DetailPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [detail, setDetail] = useState([]);
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const getDetail = (id) => {
     axios
       .get(`http://127.0.0.1:8000/entries/${id}/`)
@@ -22,7 +23,21 @@ const DetailPage = () => {
         console.log(err);
       });
   };
+  const deleteComment = async () => {
+    const isDelete = window.confirm("정말 삭제하시겠습니까?");
 
+    if (!isDelete) return;
+
+    try {
+      await axios.delete(`http://127.0.0.1:8000/entries/${id}/`);
+
+      alert("삭제되었습니다.");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      alert("삭제에 실패했습니다.");
+    }
+  };
   useEffect(() => {
     getDetail(id);
   }, [id]);
@@ -32,7 +47,7 @@ const DetailPage = () => {
       <DetailComment detail={detail} />
       <ButtonWrapper>
         <Button text="수정하기" />
-        <Button text="삭제하기" />
+        <Button text="삭제하기" onBtnClick={deleteComment} />
       </ButtonWrapper>
     </DetailPageWrapper>
   );

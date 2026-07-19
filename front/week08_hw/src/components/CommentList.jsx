@@ -6,7 +6,7 @@ import axios from "axios";
 
 const CommentList = () => {
   const [comments, setComments] = useState([]);
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const getComment = () => {
     axios
       .get("http://127.0.0.1:8000/entries/")

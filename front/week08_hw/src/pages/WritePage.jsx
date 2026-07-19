@@ -10,7 +10,7 @@ const WritePage = () => {
   const navigate = useNavigate();
   const [author, setAuthor] = useState("");
   const [comment, setComment] = useState("");
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const postComment = () => {
     axios
       .post("http://127.0.0.1:8000/entries/", {
