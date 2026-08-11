@@ -1,12 +1,12 @@
 import { useState } from "react";
-import TodoItem from "../components/TodoItem";
+import TodoItem from "./components/TodoItem";
 import useTodoStore from "./store/store";
 import * as S from "./styles/styled";
 
 function App() {
   const [newTodo, setNewTodo] = useState("");
-  const todos = useTodoStore((s) => S.todos);
-  const addTodo = useTodoStore((s) => S.addTodo);
+  const todos = useTodoStore((s) => s.todos);
+  const addTodo = useTodoStore((s) => s.addTodo);
 
   const handleAddTodo = () => {
     if (!newTodo.trim()) return;

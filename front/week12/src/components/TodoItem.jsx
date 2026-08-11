@@ -19,8 +19,8 @@ const TodoItem = ({ todo }) => {
         {todo.title}
       </S.ItemTitle>
 
-      <S.DeleteButton onClick={() => removeTodo(todo, id)} title="삭제">
-        {todo.title}
+      <S.DeleteButton onClick={() => removeTodo(todo.id)} title="삭제">
+        삭제
       </S.DeleteButton>
     </S.ItemRow>
   );
