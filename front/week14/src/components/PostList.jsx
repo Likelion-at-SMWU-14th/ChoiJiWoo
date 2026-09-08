@@ -1,10 +1,11 @@
 import { usePosts } from "../hooks/usePosts";
 
 function PostList() {
-  const { data, isPending } = usePosts();
+  const { data, isPending, isError } = usePosts();
 
-  if (isPending) {
-    return <div>로딩중...</div>;
+  if (isPending) return <p>로딩중...</p>;
+  if (isError) {
+    return <p>에러가 발생했습니다</p>;
   }
 
   return (
