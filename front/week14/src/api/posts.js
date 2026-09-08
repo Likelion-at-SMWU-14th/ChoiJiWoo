@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://jsonplaceholder.typicode.com";
+const BASE_URL = 'https://jsonplaceholder.typicode.com'
 
 export const createPost = async (newPost) => {
   const { data } = await axios.post(`${BASE_URL}/posts`, newPost)
