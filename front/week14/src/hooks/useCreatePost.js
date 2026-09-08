@@ -7,8 +7,9 @@ export const useCreatePost = () => {
   return useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['posts'] })
       console.log(('데이터 변경 성공'))
+      queryClient.invalidateQueries({ queryKey: ['posts'] })
+
     },
   })
 }
