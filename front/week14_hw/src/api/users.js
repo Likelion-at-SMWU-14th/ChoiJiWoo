@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BASE_URL = "https://jsonplaceholder.typicode.com"
+const BASE_URL = "/api"
 
 // Create
 export const signUp = async ({ username, password }) => {
