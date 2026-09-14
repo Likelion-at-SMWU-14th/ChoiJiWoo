@@ -1,37 +1,27 @@
+import axios from "axios";
+
+const BASE_URL = "https://jsonplaceholder.typicode.com";
+
 // 회원가입
 export const signUp = async ({ username, password }) => {
-  console.log("POST /api/users", { username, password });
-
-  return {
-    id: 1,
-    username,
-  };
+  const { data } = await axios.post(`${BASE_URL}/users`, { username, password });
+  return data;
 };
 
 // 마이페이지 조회
 export const fetchMyPage = async (userId) => {
-  console.log(`GET /api/users/${userId}`);
-
-  return {
-    id: userId,
-    username: "지우",
-    email: "example@test.com",
-  };
+  const { data } = await axios.get(`${BASE_URL}/users/${userId}`);
+  return data;
 };
 
 // 개인정보 수정
 export const updateProfile = async ({ userId, ...updatedFields }) => {
-  console.log(`PUT /api/users/${userId}`, updatedFields);
-
-  return {
-    id: userId,
-    ...updatedFields,
-  };
+  const { data } = await axios.put(`${BASE_URL}/users/${userId}`, updatedFields);
+  return data;
 };
 
 // 회원 탈퇴
 export const deleteUser = async (userId) => {
-  console.log(`DELETE /api/users/${userId}`);
-
-  return { id: userId };
+  await axios.delete(`${BASE_URL}/users/${userId}`);
+  return userId;
 };
