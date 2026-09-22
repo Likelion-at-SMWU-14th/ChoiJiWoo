@@ -9,7 +9,7 @@ export interface Todo {
   priority?: TodoPriority;
 }
 
-export interface TodoState {
+export interface TodoStore {
   todos: Todo[];
   filter: TodoFilter;
 
