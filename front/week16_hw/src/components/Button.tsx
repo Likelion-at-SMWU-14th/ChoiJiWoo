@@ -1,7 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 
-const Button = ({ text, onBtnClick = () => {} }) => {
+interface ButtonProps {
+  text?: string;
+  onBtnClick?: () => void;
+}
+
+const Button = ({ text, onBtnClick = () => {} }: ButtonProps) => {
   return (
     <ButtonContainer onClick={onBtnClick}>{text || "버튼"}</ButtonContainer>
   );
