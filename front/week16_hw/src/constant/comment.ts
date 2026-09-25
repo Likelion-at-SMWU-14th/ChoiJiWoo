@@ -1,4 +1,11 @@
-export const COMMENT_DATA = [
+export interface Comment {
+  id: number;
+  author: string;
+  comment: string;
+  timestamp: string;
+}
+
+export const COMMENT_DATA: Comment[] = [
   {
     id: 1,
     author: "박서현",
