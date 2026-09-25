@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import LionIcon from "./LionIcon";
 import { useNavigate } from "react-router-dom";
+import { Comment as CommentType } from "../constant/comment";
 
-const Comment = ({ comment }) => {
+interface CommentProps {
+  comment: CommentType;
+}
+
+const Comment = ({ comment }: CommentProps) => {
   const navigate = useNavigate();
 
   const goToDetailPage = () => {
