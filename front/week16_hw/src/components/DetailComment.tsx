@@ -3,8 +3,13 @@ import styled from "styled-components";
 import LionIcon from "../components/LionIcon";
 import Out from "../assets/Out.svg";
 import { useNavigate } from "react-router-dom";
+import { Comment as CommentType } from "../constant/comment";
 
-const DetailComment = ({ detail }) => {
+interface DetailCommentProps {
+  detail: CommentType;
+}
+
+const DetailComment = ({ detail }: DetailCommentProps) => {
   const navigate = useNavigate();
   return (
     <DetailCommentWrapper>
