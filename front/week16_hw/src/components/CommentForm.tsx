@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
-const CommentForm = ({ author = "", comment = "", setAuthor, setComment }) => {
+interface CommentFormProps {
+  author?: string;
+  comment?: string;
+  setAuthor: (value: string) => void;
+  setComment: (value: string) => void;
+}
+
+const CommentForm = ({
+  author = "",
+  comment = "",
+  setAuthor,
+  setComment,
+}: CommentFormProps) => {
   return (
     <FormWrapper>
       <InputWrapper>
