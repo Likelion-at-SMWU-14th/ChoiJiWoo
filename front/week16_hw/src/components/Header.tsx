@@ -3,7 +3,13 @@ import styled from "styled-components";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ title, description, button }) => {
+interface HeaderProps {
+  title: string;
+  description: string;
+  button?: boolean;
+}
+
+const Header = ({ title, description, button }: HeaderProps) => {
   const navigate = useNavigate();
 
   return (
