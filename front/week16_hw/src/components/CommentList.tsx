@@ -1,15 +1,16 @@
-import { COMMENT_DATA } from "../constant/comment";
+import { COMMENT_DATA, Comment as CommentType } from "../constant/comment";
 import Comment from "./Comment";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const CommentList = () => {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<CommentType[]>([]);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+
   const getComment = () => {
     axios
-      .get("http://127.0.0.1:8000/entries/")
+      .get<CommentType[]>("http://127.0.0.1:8000/entries/")
       .then((res) => {
         console.log(res);
         setComments(res.data.reverse());
