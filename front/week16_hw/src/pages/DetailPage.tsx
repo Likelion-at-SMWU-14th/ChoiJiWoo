@@ -1,7 +1,6 @@
-import React from "react";
 import Button from "../components/Button";
 import styled from "styled-components";
-import { COMMENT_DATA } from "../constant/comment";
+import { Comment as CommentType } from "../constant/comment";
 import DetailComment from "../components/DetailComment";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -10,11 +9,11 @@ import axios from "axios";
 const DetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState<CommentType | null>(null);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-  const getDetail = (id) => {
+  const getDetail = (id?: string) => {
     axios
-      .get(`http://127.0.0.1:8000/entries/${id}/`)
+      .get<CommentType>(`http://127.0.0.1:8000/entries/${id}/`)
       .then((res) => {
         console.log(res);
         setDetail(res.data);
@@ -41,6 +40,10 @@ const DetailPage = () => {
   useEffect(() => {
     getDetail(id);
   }, [id]);
+
+  if (!detail) {
+    return <DetailPageWrapper>불러오는 중...</DetailPageWrapper>;
+  }
 
   return (
     <DetailPageWrapper>
