@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import styled from "styled-components";
 
-const getHeaderConfig = (pathname) => {
+const getHeaderConfig = (pathname: string) => {
   if (pathname === "/write") {
     return {
       title: "TMI 작성하기",
