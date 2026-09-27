@@ -1,4 +1,4 @@
-import { COMMENT_DATA, Comment as CommentType } from "../constant/comment";
+import { Comment as CommentType } from "../constant/comment";
 import Comment from "./Comment";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
