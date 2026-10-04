@@ -4,13 +4,17 @@ import type { CreateDrinkRequest, Drink } from "./types/drink";
 import * as S from "./styles/styled";
 import DrinkCard from "./components/DrinkCard";
 import DrinkForm from "./components/DrinkForm";
+import { filterDrinks, type DrinkFilter } from "./utils/filterDrinks";
 
 export default function App() {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [deletingId, setDeletingId] = useState<Drink["id"] | null>(null);
+  const [filter, setFilter] = useState<DrinkFilter>({});
 
+  const categories = Array.from(new Set(drinks.map((drink) => drink.category)));
+  const visibleDrinks = filterDrinks(drinks, filter);
   async function loadDrinks() {
     setLoading(true);
     try {
@@ -59,13 +63,33 @@ export default function App() {
 
       <S.Layout>
         <S.ListPanel>
+          <S.TabRow>
+            <S.TabButton
+              type="button"
+              $active={!filter.category}
+              onClick={() => setFilter({})}
+            >
+              전체
+            </S.TabButton>
+
+            {categories.map((category) => (
+              <S.TabButton
+                key={category}
+                type="button"
+                $active={filter.category === category}
+                onClick={() => setFilter({ category })}
+              >
+                {category}
+              </S.TabButton>
+            ))}
+          </S.TabRow>
           {loading ? (
             <S.EmptyMessage>음료를 불러오는 중이에요...</S.EmptyMessage>
           ) : drinks.length === 0 ? (
             <S.EmptyMessage>아직 등록된 음료가 없어요.</S.EmptyMessage>
           ) : (
             <S.Cards>
-              {drinks.map((drink) => (
+              {visibleDrinks.map((drink) => (
                 <DrinkCard
                   key={drink.id}
                   drink={drink}

@@ -67,14 +67,6 @@ export const CardLabel = styled.p`
   font-weight: 700;
 `;
 
-export const CardPrice = styled.p`
-  margin: 0 0 12px;
-
-  color: #000000;
-  font-size: 18px;
-  font-weight: 700;
-`;
-
 export const FormPanel = styled.form`
   display: flex;
   flex-direction: column;
@@ -213,7 +205,7 @@ export const CardButton = styled.button`
   padding: 6px 12px;
   border: 1px solid #e2c4c0;
   border-radius: 8px;
-  background: #fff;
+  background: #ffffff;
   color: #b5594f;
   font-size: 12px;
   font-weight: 600;
@@ -223,4 +215,23 @@ export const CardButton = styled.button`
     opacity: 0.5;
     cursor: wait;
   }
+`;
+
+export const TabRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+`;
+
+export const TabButton = styled.button<{ $active: boolean }>`
+  padding: 8px 16px;
+  border: 1px solid ${({ $active }) => ($active ? "#6b8f71" : "#dce5d6")};
+  border-radius: 999px;
+  background: ${({ $active }) => ($active ? "#6b8f71" : "#ffffff")};
+  color: ${({ $active }) => ($active ? "#ffffff" : "#52735a")};
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
 `;
