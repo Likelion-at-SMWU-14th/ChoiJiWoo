@@ -89,24 +89,6 @@
       "temperature": "ICE",
       "calories": 170,
       "description": "상큼한 레몬과 탄산이 어우러진 시원한 에이드입니다."
-    },
-    {
-      "name": "체리에이드",
-      "category": "에이드",
-      "temperature": "ICE",
-      "price": 5000,
-      "calories": 180,
-      "description": "상큼한 체리와 탄산이 어우러진 에이드입니다.",
-      "id": "b9ErXFD70nM"
-    },
-    {
-      "name": "체리에이드",
-      "category": "에이드",
-      "temperature": "ICE",
-      "price": 6000,
-      "calories": 180,
-      "description": "dfdf",
-      "id": "A5mEr9xJv7A"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

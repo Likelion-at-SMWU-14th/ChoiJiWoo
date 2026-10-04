@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 export const Card = styled.article`
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   border: 1px solid #dce5d6;
   border-radius: 16px;
@@ -198,4 +200,27 @@ export const EmptyMessage = styled.p`
   color: #626a62;
   font-size: 13px;
   text-align: center;
+`;
+
+export const CardActions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 16px;
+`;
+
+export const CardButton = styled.button`
+  padding: 6px 12px;
+  border: 1px solid #e2c4c0;
+  border-radius: 8px;
+  background: #fff;
+  color: #b5594f;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: wait;
+  }
 `;

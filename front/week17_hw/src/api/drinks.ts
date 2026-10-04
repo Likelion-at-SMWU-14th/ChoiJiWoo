@@ -7,6 +7,10 @@ export async function createDrink(drink: CreateDrinkRequest): Promise<Drink> {
   return response.data;
 }
 
+export async function deleteDrink(id: Drink["id"]): Promise<void> {
+  await api.delete(`/drinks/${id}`);
+}
+
 const api = axios.create({
   baseURL: "http://localhost:8000",
 });

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createDrink, getDrinks } from "./api/drinks";
+import { createDrink, getDrinks, deleteDrink } from "./api/drinks";
 import type { CreateDrinkRequest, Drink } from "./types/drink";
 import * as S from "./styles/styled";
 import DrinkCard from "./components/DrinkCard";
@@ -9,6 +9,7 @@ export default function App() {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [deletingId, setDeletingId] = useState<Drink["id"] | null>(null);
 
   async function loadDrinks() {
     setLoading(true);
@@ -35,6 +36,17 @@ export default function App() {
     }
   }
 
+  async function handleDelete(id: Drink["id"]) {
+    setDeletingId(id);
+    try {
+      await deleteDrink(id);
+      setDrinks((prev) => prev.filter((drink) => drink.id !== id));
+    } catch (error: unknown) {
+      console.error(error);
+    } finally {
+      setDeletingId(null);
+    }
+  }
   useEffect(() => {
     void loadDrinks();
   }, []);
@@ -54,7 +66,12 @@ export default function App() {
           ) : (
             <S.Cards>
               {drinks.map((drink) => (
-                <DrinkCard key={drink.id} drink={drink} />
+                <DrinkCard
+                  key={drink.id}
+                  drink={drink}
+                  deleting={deletingId === drink.id}
+                  onDelete={handleDelete}
+                />
               ))}
             </S.Cards>
           )}
