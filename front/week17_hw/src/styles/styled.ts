@@ -115,6 +115,10 @@ const fieldStyle = css`
   }
 `;
 
+export const FieldSelect = styled.select`
+  ${fieldStyle}
+`;
+
 export const FieldInput = styled.input`
   ${fieldStyle}
 `;

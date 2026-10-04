@@ -1,5 +1,11 @@
 import axios from "axios";
 import type { Drink } from "../types/drink";
+import type { CreateDrinkRequest } from "../types/drink";
+
+export async function createDrink(drink: CreateDrinkRequest): Promise<Drink> {
+  const response = await api.post<Drink>("/drinks", drink);
+  return response.data;
+}
 
 const api = axios.create({
   baseURL: "http://localhost:8000",

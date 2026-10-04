@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getDrinks } from "./api/drinks";
-import type { Drink } from "./types/drink";
+import { createDrink, getDrinks } from "./api/drinks";
+import type { CreateDrinkRequest, Drink } from "./types/drink";
 import * as S from "./styles/styled";
 import DrinkCard from "./components/DrinkCard";
 import DrinkForm from "./components/DrinkForm";
@@ -8,6 +8,7 @@ import DrinkForm from "./components/DrinkForm";
 export default function App() {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
 
   async function loadDrinks() {
     setLoading(true);
@@ -17,6 +18,20 @@ export default function App() {
       console.error(error);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleCreate(drink: CreateDrinkRequest): Promise<boolean> {
+    setSaving(true);
+    try {
+      const created = await createDrink(drink);
+      setDrinks((prev) => [...prev, created]);
+      return true;
+    } catch (error: unknown) {
+      console.error(error);
+      return false;
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -46,7 +61,7 @@ export default function App() {
         </S.ListPanel>
 
         <aside>
-          <DrinkForm />
+          <DrinkForm disabled={saving} onSubmit={handleCreate} />
         </aside>
       </S.Layout>
     </S.Page>
