@@ -1,22 +1,27 @@
+import type { Drink } from "../types/drink";
 import * as S from "../styles/styled";
 
-export default function DrinkCard() {
+interface DrinkCardProps {
+  drink: Drink;
+}
+
+export default function DrinkCard({ drink }: DrinkCardProps) {
   return (
     <S.Card>
-      <S.CardCategory>커피</S.CardCategory>
+      <S.CardCategory>{drink.category}</S.CardCategory>
 
       <S.CardTitle>
-        아메리카노
-        <S.CardMark>ICE</S.CardMark>
+        {drink.name}
+        <S.CardMark>{drink.temperature}</S.CardMark>
       </S.CardTitle>
 
       <S.CardInfo>
-        <S.CardText>4,500원</S.CardText>
-        <S.CardText>10 kcal</S.CardText>
+        <S.CardText>{drink.price.toLocaleString()}원</S.CardText>
+        <S.CardText>{drink.calories} kcal</S.CardText>
       </S.CardInfo>
 
       <S.CardLabel>음료 소개</S.CardLabel>
-      <S.CardText>깔끔하고 고소한 맛의 커피입니다.</S.CardText>
+      <S.CardText>{drink.description}</S.CardText>
     </S.Card>
   );
 }

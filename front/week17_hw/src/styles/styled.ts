@@ -184,3 +184,14 @@ export const Cards = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
+export const EmptyMessage = styled.p`
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 36px 16px;
+  border: 1px dashed #dce5d6;
+  border-radius: 12px;
+  color: #626a62;
+  font-size: 13px;
+  text-align: center;
+`;
