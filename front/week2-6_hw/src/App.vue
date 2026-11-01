@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import MenuForm from "./components/MenuForm.vue";
+import MenuItem from "./components/MenuItem.vue";
 
 const menus = ref([
   { id: 1, name: "김치찌개", category: "한식" },
@@ -14,10 +16,8 @@ const menus = ref([
 
 const newMenu = ref("");
 
-function addMenu() {
-  if (!newMenu.value.trim()) return;
-  menus.value.push({ id: Date.now(), name: newMenu.value, category: "한식" });
-  newMenu.value = "";
+function addMenu(menu) {
+  menus.value.push({ id: Date.now(), ...menu });
 }
 
 function removeMenu(id) {
@@ -27,16 +27,13 @@ function removeMenu(id) {
 
 <template>
   <h1>오늘 뭐 먹지?</h1>
-  <input
-    v-model="newMenu"
-    @keyup.enter="addMenu"
-    placeholder="메뉴 이름을 입력하세요"
-  />
-  <button @click="addMenu">추가</button>
+  <MenuForm @add="addMenu" />
   <ul>
-    <li v-for="menu in menus" :key="menu.id">
-      [{{ menu.category }}] {{ menu.name }}
-      <button @click="removeMenu(menu.id)">삭제</button>
-    </li>
+    <MenuItem
+      v-for="menu in menus"
+      :key="menu.id"
+      :menu="menu"
+      @remove="removeMenu"
+    />
   </ul>
 </template>
