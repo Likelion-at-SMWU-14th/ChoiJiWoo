@@ -11,13 +11,32 @@ const menus = ref([
   { id: 7, name: "떡볶이", category: "분식" },
   { id: 8, name: "김밥", category: "분식" },
 ]);
+
+const newMenu = ref("");
+
+function addMenu() {
+  if (!newMenu.value.trim()) return;
+  menus.value.push({ id: Date.now(), name: newMenu.value, category: "한식" });
+  newMenu.value = "";
+}
+
+function removeMenu(id) {
+  menus.value = menus.value.filter((menu) => menu.id !== id);
+}
 </script>
 
 <template>
   <h1>오늘 뭐 먹지?</h1>
+  <input
+    v-model="newMenu"
+    @keyup.enter="addMenu"
+    placeholder="메뉴 이름을 입력하세요"
+  />
+  <button @click="addMenu">추가</button>
   <ul>
     <li v-for="menu in menus" :key="menu.id">
       [{{ menu.category }}] {{ menu.name }}
+      <button @click="removeMenu(menu.id)">삭제</button>
     </li>
   </ul>
 </template>
