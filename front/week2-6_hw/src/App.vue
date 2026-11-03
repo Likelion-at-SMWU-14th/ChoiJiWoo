@@ -1,8 +1,9 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import MenuForm from "./components/MenuForm.vue";
 import MenuItem from "./components/MenuItem.vue";
 import CategorySelect from "./components/CategorySelect.vue";
+import RouletteResult from "./components/RouletteResult.vue";
 
 const menus = ref([
   { id: 1, name: "김치찌개", category: "한식" },
@@ -16,6 +17,9 @@ const menus = ref([
 ]);
 
 const category = ref("전체");
+const result = ref("");
+const spinning = ref(false);
+let timer = null;
 
 const filteredMenus = computed(() =>
   category.value === "전체"
@@ -30,11 +34,37 @@ function addMenu(menu) {
 function removeMenu(id) {
   menus.value = menus.value.filter((menu) => menu.id !== id);
 }
+
+function spin() {
+  if (spinning.value || filteredMenus.value.length === 0) return;
+  spinning.value = true;
+
+  timer = setInterval(() => {
+    const list = filteredMenus.value;
+    if (list.length === 0) return;
+    result.value = list[Math.floor(Math.random() * list.length)].name;
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(timer);
+    spinning.value = false;
+  }, 2000);
+}
+
+watch(category, () => {
+  result.value = "";
+});
 </script>
 
 <template>
   <h1>오늘 뭐 먹지?</h1>
   <CategorySelect v-model="category" />
+  <RouletteResult :result="result" :spinning="spinning" />
+  <button @click="spin" :disabled="spinning || filteredMenus.length === 0">
+    {{ spinning ? "고르는 중..." : "룰렛 돌리기" }}
+  </button>
+  <hr />
+
   <MenuForm @add="addMenu" />
 
   <p v-if="filteredMenus.length === 0">이 카테고리엔 메뉴가 없어요.</p>
