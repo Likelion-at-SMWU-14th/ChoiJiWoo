@@ -1,4 +1,4 @@
-import { messages } from ".data";
+import { messages } from "./data";
 
 export function getMessages() {
   return messages;
