@@ -82,12 +82,14 @@ button:disabled {
   font-size: 1.4rem;
 }
 
-.box a {
+.box a,
+article a {
   color: #ff7a45;
   font-weight: 700;
   text-decoration: none;
 }
 
-.box a:hover {
+.box a:hover,
+article a:hover {
   text-decoration: underline;
 }
