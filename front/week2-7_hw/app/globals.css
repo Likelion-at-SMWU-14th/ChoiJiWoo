@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #222222;
+}
+
+.header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.header a {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffe8d9;
+  color: #d9480f;
+  font-size: 0.8rem;
+}
+
+.menu-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.menu-card {
+  padding: 12px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+}
+
+.menu-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7a45;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.box {
+  padding: 24px;
+  margin: 16px 0;
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.box a,
+article a {
+  color: #ff7a45;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.box a:hover,
+article a:hover {
+  text-decoration: underline;
+}
